@@ -1,0 +1,26 @@
+server:
+  port: 8888
+
+#注册中心eureka
+eureka:
+  instance:
+    #appname: ${spring.application.name} #应用名，首先获取spring.application.name的值，如果取值为空，则取默认unknown。
+    hostname: localhost
+  client:
+    registerWithEureka: false #是否注册eureka服务
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://zhoubc:zhoubc@${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: eureka-server   
+   #注册中心eureka用户密码
+  security:
+    user:
+      name: zhoubc
+      password: zhoubc
+
+
+
+

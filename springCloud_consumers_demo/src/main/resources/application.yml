@@ -1,0 +1,34 @@
+server:  
+  port: 8100
+#  servlet:
+#    context-path: /api-role
+        
+#服务注册
+eureka:
+  instance:
+    instance-id: spring-cloud-consumers
+    appname: ${spring.application.name}
+    metadata-map:
+     cluster: consumers  #自定义元数据，key/value都可以随便写
+  client:
+    service-url: 
+      #EurekaServer服务注册中心地址
+      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+
+spring:
+  application:
+    name: spring-cloud-consumers
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+   
+#使用feign服务间调用时，开启hystrix服务降级
+feign: 
+  hystrix: 
+      enabled: true
+
+
+

@@ -1,0 +1,28 @@
+server:  
+  port: 8887
+  
+#服务注册
+eureka:
+  instance:
+    instance-id: spring-cloud-zuul  #服务节点
+    appname: ${spring.application.name}
+  client:
+    service-url: 
+      #EurekaServer服务注册中心地址
+      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+
+spring:
+  application:    
+    name: spring-cloud-zuul
+    
+zuul:
+  routes:
+    api-consumers:
+      path: /api-consumenrs/**
+      serviceId: spring-cloud-consumers
+    api-providers:
+      path: /api-providers/**
+      serviceId: spring-cloud-providers
+    #忽略指定微服务,多个用“,”分隔,使用“*”忽略所有
+#  ignored-services: spring-cloud-providers
+  

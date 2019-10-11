@@ -1,0 +1,18 @@
+server:  
+  port: 8001
+#  servlet:
+#    context-path: /api-user
+    
+#服务注册
+eureka:
+  instance:
+    instance-id: spring-cloud-providers  #服务节点
+    appname: ${spring.application.name}
+  client:
+    service-url: 
+      #EurekaServer服务注册中心地址
+      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+
+spring:
+  application:    
+    name: spring-cloud-providers

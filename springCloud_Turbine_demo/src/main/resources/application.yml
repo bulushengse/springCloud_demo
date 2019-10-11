@@ -1,0 +1,37 @@
+server:  
+  port: 9999
+
+    
+#服务注册
+eureka:
+  instance:
+    instance-id: spring-cloud-turbine #服务节点
+    #appname: ${spring.application.name}
+  client:
+    service-url: 
+      #EurekaServer服务注册中心地址
+      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+      
+turbine:
+  #监控的微服务（必须是使用hystrix组件的微服务），多个用","隔开
+  appConfig: spring-cloud-consumers,spring-cloud-consumers1  
+  aggregator:    
+      clusterConfig: consumers     #default  #指定哪些集群 ，多个使用","分割，默认为default
+  clusterNameExpression: metadata['cluster'] #default  #指定集群名称，多个使用","分割，默认为default
+  combine-host-port: true  
+  instanceUrlSuffix: /actuator/hystrix.stream  #聚合实例访问后缀
+#  ConfigPropertyBasedDiscovery:
+#    test:
+#      instances:      #配置集群节点ip(用以发现服务，规则不限在ip列表)
+
+#1）当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default  
+#2）当clusterNameExpression: metadata['aaa']时  (aaa取决于微服务配置的元数据eureka.instance.metadata-map.aaa: bbb)
+#则必须配置turbine.aggregator.clusterConfig:bbb  (bbb取决于微服务配置的元数据eureka.instance.metadata-map.aaa: bbb)
+#http://localhost:9999/turbine.stream?aaa=bbb
+
+
+
+spring:
+  application:    
+    name: spring-cloud-turbine
+
