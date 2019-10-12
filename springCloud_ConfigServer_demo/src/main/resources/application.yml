@@ -1,0 +1,32 @@
+server:  
+  port: 9000
+    
+#服务注册
+eureka:
+  instance:
+    instance-id: spring-cloud-configServer  #服务节点
+    appname: ${spring.application.name}
+  client:
+    service-url: 
+      #EurekaServer服务注册中心地址
+      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+
+spring:
+  application:    
+    name: spring-cloud-configServer
+  cloud:
+      config:
+        server:
+          git: 
+            #  配置文件只搜索url目录下的searchPaths
+            uri: https://github.com/bulushengse/springCloud_demo.git
+            # 指定搜索路径，如果有多个路径则使用,分隔
+            searchPaths: /springCloud_ConfigServer_demo/profile
+            #从远程库获取配置文件，需要存储到本地文件
+            basedir: E:/temp
+            # 强制从远程库中更新本地库
+            force-pull: true
+            username: bulushengse
+            password: xiaocheng.1314
+            
+            
