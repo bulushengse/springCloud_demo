@@ -23,7 +23,7 @@ spring:
             # 指定搜索路径，如果有多个路径则使用,分隔
             searchPaths: /springCloud_ConfigServer_demo/profile
             #从远程库获取配置文件，需要存储到本地文件
-            basedir: E:/temp
+            basedir: E:/temp 
             # 强制从远程库中更新本地库
             force-pull: true
             username: bulushengse
