@@ -11,10 +11,11 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
 public class SpringCloudTurbineDemoApplication {
 
 	/**
+	 * 断路器监控hystrix dashboard，详见springCloud_consumers_demo项目
 	 * 一个微服务的hystrix dashboard只能监控一台服务器上的服务调用情况，使用了turbine后就可以监控多台服务器的情况
 	 * 
-	 * 访问地址http://localhost:9999/hystrix，
-     * 集群模式，输入ttp://localhost:9999/turbine.stream?cluster=consumers
+	 * 主要是application.yml的配置
+	 * 访问地址http://localhost:9999/hystrix，输入ttp://localhost:9999/turbine.stream?cluster=consumers，集群模式
 	 * 
 	 * 测试时，修改端口port、节点instance-id、应用名spring.application.name，
 	 * 多启动几个服务提供者springCloud_consumers_demo,

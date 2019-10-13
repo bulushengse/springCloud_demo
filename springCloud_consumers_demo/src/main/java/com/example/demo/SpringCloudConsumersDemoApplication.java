@@ -26,6 +26,10 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @EnableHystrixDashboard
 public class SpringCloudConsumersDemoApplication {
 
+	/**
+	 * http://localhost:8100/
+	 * 
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCloudConsumersDemoApplication.class, args);
 		System.out.println("consumers服务启动成功"); 

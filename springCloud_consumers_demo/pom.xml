@@ -78,6 +78,12 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         
+        <!-- config-client 统一配置管理客户端 -->
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		
           <!-- jsp -->
 	     <dependency>
 	   		<groupId>org.apache.tomcat.embed</groupId>

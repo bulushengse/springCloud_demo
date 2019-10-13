@@ -3,10 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<!-- 
 	新建springboot项目Spring Starter Project->选择Project Dependencies:
-	Spring Cloud Config ->Config Server
-	Spring Cloud Discovery->Eureka Discovery
+	Spring Cloud Discovery->Eureka Server
+	
 	 -->
-	 
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -47,10 +46,10 @@
 			<scope>test</scope>
 		</dependency> 
 		
-		<!-- spring eureka web页面 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
+		<!-- eureka依赖包，注册中心以及web页面 -->
+		<dependency>            
+			<groupId>org.springframework.cloud</groupId>            
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>        
 		</dependency>
 		
 		<!-- security依赖包，用于注册中心eureka配置用户密码  -->
@@ -59,11 +58,6 @@
 		    <artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		
-		<!-- eureka依赖包，注册中心 -->
-		<dependency>            
-			<groupId>org.springframework.cloud</groupId>            
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>        
-		</dependency>
 	</dependencies>
 	
 	<!-- spring-cloud所有项目依赖包 -->  

@@ -18,15 +18,15 @@ spring:
       config:
         server:
           git: 
-            #  配置文件只搜索url目录下的searchPaths
-            uri: https://github.com/bulushengse/springCloud_demo.git
+            # 配置文件只搜索url目录下的searchPaths
+            uri: https://github.com/bulushengse/springCloud_profile.git
             # 指定搜索路径，如果有多个路径则使用,分隔
-            searchPaths: /springCloud_ConfigServer_demo/profile
-            #从远程库获取配置文件，需要存储到本地文件
-            basedir: E:/temp 
+            searchPaths: /profile
+            #从远程库项目文件，存储到本地
+            basedir: E:/temp   
             # 强制从远程库中更新本地库
             force-pull: true
-            username: bulushengse
-            password: xiaocheng.1314
+            username: bulushengse      #github登录用户
+            password: xiaocheng.1314    #github登录密码
             
             

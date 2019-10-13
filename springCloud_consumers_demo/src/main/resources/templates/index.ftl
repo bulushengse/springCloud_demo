@@ -12,6 +12,8 @@
 
 <a href="login/loginCheck?username=zhoubc&password=123" >测试loginCheck方法 </a><br/><br/>
 
+<a href="login/getInt" >统一配置管理，远程获取配置随机数</a><br/><br/>
+
 </body>
 </html>
 
