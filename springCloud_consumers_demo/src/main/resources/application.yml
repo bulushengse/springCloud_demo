@@ -13,22 +13,18 @@ eureka:
   client:
     service-url: 
       #EurekaServer服务注册中心地址
-      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+      defaultZone: http://zhoubc:zhoubc@localhost:8761/eureka/   
 
 spring:
   application:
     name: spring-cloud-consumers
-    
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-   
-#使用feign服务间调用时，开启hystrix服务降级
-feign: 
-  hystrix: 
-      enabled: true
-
-
-
+  security:
+    user:
+      name: zhoubc
+      password: zhoubc
+   #加载其他配置文件
+  profiles:
+#  include: feign,actuator,admin,sleuth,rabbitmq
+    include: feign,actuator,rabbitmq
+#   include: feign,actuator,sleuth,rabbitmq
+  

@@ -60,42 +60,66 @@
 		    <artifactId>spring-cloud-openfeign-core</artifactId>
 		</dependency> -->
 
-		<!--hystrix 组件 服务调用，服务降级，熔断-->        
+		<!--hystrix组件  服务调用，服务降级，熔断-->        
 		<dependency>            
 			<groupId>org.springframework.cloud</groupId>            
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>        
 		</dependency>
 
-		<!--hystrix dashboard 组件 提供了数据监控和图形化界面。-->   
+		<!--hystrix dashboard组件  提供了数据监控和图形化界面。-->   
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
 		</dependency>
 		
 		<!--actuator ,监控系统健康情况的工具-->  
-		<dependency>
+		 <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+        </dependency> 
         
-        <!-- config-client 统一配置管理客户端 -->
+         <!-- admin依赖包，客户端管理，包含actuator组件-->
+       <dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>2.0.0</version>
+  		</dependency>
+  		<!-- security依赖包，用于admin配置用户密码认证  -->
+  		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency> 
+  			
+        <!-- config-client依赖包，统一配置管理客户端 -->
         <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		
-          <!-- jsp -->
-	     <dependency>
+		 <!-- zipkin依赖包，服务链路追踪 -->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+		
+		 <!-- rabbitmq依赖包 -->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+		
+          <!-- jsp ，此处的<scope></scope>一定不要加上作用于为provided，可以为compile或缺省-->
+<!-- 	     <dependency>
 	   		<groupId>org.apache.tomcat.embed</groupId>
 	   		<artifactId>tomcat-embed-jasper</artifactId>
-	   		<!--此处的<scope></scope>一定不要加上作用于为provided，可以为compile或缺省-->
-		</dependency>
+		</dependency> -->
 		
 		<!-- freeMarker -->
 		<dependency>  
             <groupId>org.springframework.boot</groupId>  
             <artifactId>spring-boot-starter-freemarker</artifactId>  
         </dependency>  
+        
 	</dependencies>
 
 	<dependencyManagement>

@@ -18,6 +18,10 @@ Spring Cloud Finchley; Spring Boot 2.0.0
 
 8 服务消息总线Bus  springCloud_Bus_demo
 
+9 服务链路追踪Sleuth  springCloud_Sleuth_demo
+
+ 
+
 
 
 

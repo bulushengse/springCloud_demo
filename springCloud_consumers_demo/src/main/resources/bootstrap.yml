@@ -16,9 +16,11 @@ spring:
       config:
         uri: http://localhost:9000/ #config-server地址 , 与通过服务来访问Config Serve两种方式选其一
 #        discovery:
-#          enabled: true #开启通过服务来访问Config Server的功能，注意首先必须要服务已注册，建议配置这个，高可用！
+#          enabled: true #开启通过服务来访问Config Server的功能，注意首先要服务注册配置在bootstrap.yml预加载，建议配置这个，高可用！
 #          service-id: spring-cloud-configServer
 #         #应用名-环境.properties/应用名-环境.yml
         name: consumers   #应用名 
         profile: test   #环境
         label: master   #分支
+        
+

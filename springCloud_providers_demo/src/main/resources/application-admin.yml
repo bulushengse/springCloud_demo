@@ -1,0 +1,44 @@
+#Spring Boot Admin 管理和监控一个或者多个Spring Boot应用，client端配置：
+#在pom.xml添加springBootAdmin相关依赖和springSecurity依赖jar包，
+#在application.yml添加配置，Client可以通过http向Server端注册1，也可以通过组件eureka进行注册2    
+
+#2.admin client通过eureka向服务端注册
+#eureka:
+#  instance:
+#    metadata-map:
+#      user.name: ${spring.security.user.name}
+#      user.password: ${spring.security.user.password}
+
+spring:
+  boot:
+    admin:
+      client:
+        #是否启用springbootAdmin客户端，默认为true
+        enabled: true 
+        #是否开启自动注册，默认为true 。怎么测试都没用~~~
+        #auto-registration: true
+        #是否只注册一个server端，与url设置的顺序配合使用，默认为true。
+        #如果为true，server端宕机，会自动在下一个server端进行注册 ；如果为false，会在所有的server端进行注册 
+        register-once: true
+        url: http://localhost:7777,http://localhost:7779  #要注册的server端的url地址，多个注册“,”隔开     
+        username: ${spring.security.user.password}
+        password: ${spring.security.user.name}
+        #1.admin client通过http向服务端注册
+        instance:
+          metadata:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+#  security:
+#     user:
+#      name: zhoubc
+#      password: zhoubc
+
+#actuator系统监控  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

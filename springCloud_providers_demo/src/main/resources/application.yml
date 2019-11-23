@@ -6,13 +6,24 @@ server:
 #服务注册
 eureka:
   instance:
-    instance-id: spring-cloud-providers  #服务节点
-    appname: ${spring.application.name}
+    instance-id: spring-cloud-providers1  #服务节点
+    #appname: ${spring.application.name}
   client:
-    service-url: 
-      #EurekaServer服务注册中心地址
-      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
-
+    registerWithEureka: true #是否向注册中心注册服务，默认为true
+    service-url:  
+      #EurekaServer服务注册中心地址，一个服务无法同时注册到多个未做集群的注册中心上的，详见springCloud_Eureka_demo高可用注册中心
+      defaultZone: http://zhoubc:zhoubc@localhost:8761/eureka/
+      
 spring:
   application:    
     name: spring-cloud-providers
+  security:
+    basic:
+      enabled: false   #是否开启security验证
+    user:
+      name: zhoubc
+      password: zhoubc
+  #加载其他配置文件
+  profiles:
+#    include: admin
+    

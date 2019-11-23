@@ -1,0 +1,21 @@
+#Hystrix断路器组件配置，feign已整合Hystrix
+feign: 
+  hystrix: 
+      enabled: true  #是否开启hystrix服务降级
+
+#ribbon:
+#  ConnectTimeout: 3000
+#  ReadTimeout: 60000
+#  
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000 #hystrix超时时间
+      
+
+
+
+

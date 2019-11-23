@@ -52,7 +52,7 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>        
 		</dependency>
 		
-		<!-- security依赖包，用于注册中心eureka配置用户密码  -->
+		<!-- security依赖包，用于注册中心eureka配置用户密码认证  -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-security</artifactId>

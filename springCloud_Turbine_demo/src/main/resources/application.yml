@@ -1,7 +1,6 @@
 server:  
   port: 9999
 
-    
 #服务注册
 eureka:
   instance:
@@ -10,7 +9,7 @@ eureka:
   client:
     service-url: 
       #EurekaServer服务注册中心地址
-      defaultZone: http://zhoubc:zhoubc@localhost:8888/eureka/   
+      defaultZone: http://zhoubc:zhoubc@localhost:8761/eureka/   
       
 turbine:
   #监控的微服务（必须是使用hystrix组件的微服务），多个用","隔开
@@ -29,9 +28,8 @@ turbine:
 #则必须配置turbine.aggregator.clusterConfig:bbb  (bbb取决于微服务配置的元数据eureka.instance.metadata-map.aaa: bbb)
 #http://localhost:9999/turbine.stream?aaa=bbb
 
-
-
 spring:
   application:    
     name: spring-cloud-turbine
+
 

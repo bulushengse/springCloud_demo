@@ -1,0 +1,24 @@
+#Spring Boot Admin 管理和监控一个或者多个Spring Boot应用，client端配置：
+spring:
+  boot:
+    admin:
+      client:
+        enabled: true 
+        #auto-registration: true
+        register-once: false
+        url: http://localhost:7777,http://localhost:7779
+        username: ${spring.security.user.password}
+        password: ${spring.security.user.name}
+        instance:
+          metadata:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+#  security:
+#    user:
+#      name: zhoubc
+#      password: zhoubc
+
+
+
+
+
