@@ -1,0 +1,45 @@
+server:  
+  port: 7777
+
+    
+#服务注册
+eureka:
+  instance:
+    instance-id: spring-boot-adminServer   #服务节点
+    #appname: ${spring.application.name}
+  client:
+    service-url: 
+      #EurekaServer服务注册中心地址
+      defaultZone: http://zhoubc:zhoubc@localhost:8761/eureka/   
+      
+spring:
+  application:    
+    name: spring-boot-adminServer
+  #springBoot_AdminServer用户密码        
+  security:
+    user:
+      name: zhoubc
+      password: zhoubc
+#  #admin邮件通知
+#  boot:
+#     admin:
+#        notify:
+#         mail:
+#          enabled: true
+#          from:                           # 发件人
+#          to:                               # 收件人
+#  #mail收件邮箱
+#  mail:
+#      host: smtphm.qiye.163.com
+#      username:                         # 用户名
+#      password:                          # 密码
+  
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+

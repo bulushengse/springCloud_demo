@@ -20,6 +20,8 @@ Spring Cloud Finchley; Spring Boot 2.0.0
 
 9 服务链路追踪Sleuth  springCloud_Sleuth_demo
 
+10 服务监控  springBoot_AdminServer_demo
+
  
 
 
